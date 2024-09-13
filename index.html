@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>宝可梦开放大世界，正式开放</title>
+	<style>
+		html,
+		body {
+			overflow: hidden;
+			width: 100%;
+			margin: 0 auto;
+			height: 100vh;
+			padding-top: 0 !important;
+		}
+
+		body {
+			background-color: #edefee;
+			font-size: 1rem;
+			font-family: 'Microsoft YaHei';
+		}
+
+		.video-bg {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 5;
+		}
+
+		.pa {
+			position: absolute;
+		}
+
+		.p1_con {
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			text-align: center;
+			z-index: 20;
+			transform: translateZ(100px);
+		}
+
+		.p1_m_foot {
+			bottom: 3rem;
+			left: 0;
+			width: 100%;
+			padding-top: 1.7rem;
+		}
+
+		.section1 .yuyuebtn {
+			width: 15.66rem;
+			height: 5.69rem;
+			background-image: url('./index_yuyue_btn.png');
+			display: block;
+			margin: 10px auto 0 auto;
+			z-index: 100;
+		}
+
+		.i {
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			display: block;
+			background-size: cover;
+		}
+
+		a {
+			text-decoration: none;
+			transition: color 0.2s;
+			cursor: pointer;
+			outline: 0;
+			color: #929392;
+		}
+
+		.index_yy_number {
+			text-align: center;
+			font-size: 1.31rem;
+			color: #fff;
+		}
+
+		.p1_mark {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, .6);
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 10;
+		}
+
+		.index_yy_number span {
+			color: #ffdc40;
+			margin: 0 .05rem;
+			font-family: 'SairaSemiCondensed';
+			font-size: 1.33rem;
+		}
+
+		.playinput {
+			height: 2.5rem;
+			margin: 0 auto;
+			background: rgba(239, 231, 231, 0.2);
+			border-radius: 1rem;
+			border: none;
+			color: white;
+		}
+
+		.playtip {
+			color: white;
+		}
+
+		input::placeholder {
+			font-size: 15px;
+			opacity: 0.5;
+			color: white;
+		}
+
+		.p1_title {
+			top: 5rem;
+			width: 100%;
+			height: 10rem;
+			z-index: 99;
+			background-image: url('./slogan.png');
+			background-size: 100% 100%;
+		}
+
+		.p1_title_tip {
+			z-index: 99;
+			color: yellow;
+			font-weight: bold;
+			font-size: 14px;
+			top: 14rem;
+			left: 2rem;
+		}
+
+		.top_nav_box {
+			top: 0;
+			z-index: 99;
+			background-color: #000;
+			display: flex;
+			width: 100%;
+			height: 3.8rem;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 .25rem;
+			transform: translateZ(1000px);
+		}
+
+		.top_icon {
+			margin-left: 0.3rem;
+			width: 2.8rem;
+			height: 2.8rem;
+			background-image: url('./top_nav_icon.png');
+		}
+
+		.top_info {
+			color: #FFF;
+			left: 4rem;
+		}
+
+		.top_info strong {
+			font-size: 1.2rem;
+		}
+
+		.top_info p {
+			margin: 0;
+			font-size: .8rem;
+		}
+
+		.t_logo {
+			left: 13.5rem;
+			width: 7rem;
+			height: 2.8rem;
+			background-image: url('./logo.png');
+			background-size: 100% 100%;
+		}
+
+		.bkm_logo {
+			right: 1rem;
+			width: 4rem;
+			height: 2.8rem;
+			background-image: url('./bkm_logo.png');
+			background-size: 100% 100%;
+		}
+
+		.p1_showbg {
+			top: 17rem;
+			z-index: 99;
+			width: 100%;
+			height: 11rem;
+			background-image: url('./switch-bg.png');
+			background-size: 100% 100%;
+		}
+
+		.p1_showvz {
+			height: 10rem;
+			width: 57%;
+			margin: 0 auto;
+			position: relative;
+			top: 0.5rem;
+		}
+
+		.showSuccess-Model {
+			display: none;
+			z-index: 100;
+			background-color: yellow;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			width: 80%;
+			height: 60%;
+			border-radius: 3rem;
+			text-align: center;
+			background-image: url('./success-bg.png');
+			background-size: 100% 100%;
+		}
+
+		.showSuccess-Model i {
+			font-weight: bold;
+			font-size: 30px;
+			float: right;
+			color: #f9ff00;
+			-webkit-text-stroke: 1px black;
+		}
+
+		.showSuccess-Model p {
+			position: relative;
+			top: 37%;
+			left: 3%;
+			font-size: 14px;
+			color: red;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+	<div class="swiper-wrapper">
+		<div class="swiper-slide page section1 swiper-slide-active">
+			<div class="top_nav_box pa">
+				<h1 class="i top_icon"></h1>
+				<div class="top_info pa">
+					<strong>宝可梦开放大世界</strong>
+					<p>宝可梦系列轻松养成游戏</p>
+				</div>
+				<div class="t_logo pa"></div>
+				<div class="bkm_logo pa"></div>
+			</div>
+			<div class="p1_title pa"></div>
+			<div class="p1_title_tip pa">极巨化、钛晶化、mega进化、9大世代精灵全收集</div>
+			<video class="video-bg" loop muted autoplay x5-playsinline="true" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-orientation="portraint">
+				<source src="https://unite.lv.game.qq.com/dis_kt_af1c47269bd2cb848d07da8682c2a45c_1702347566/0b53vuadeaaaweapdslxars6plodgkwqamqa.f0.mp4" type="video/mp4">
+			</video>
+			<div class="p1_mark"></div>
+			<div class="p1_showbg pa">
+				<div class="p1_showvz">
+					<video class="p1_showvideo" controls loop muted autoplay
+						style="object-fit: fill;width: 100%;height: 100%;">
+						<source src="./show.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+			<div class="p1_con pa">
+				<div class="pa p1_m_foot">
+					<input type="text" class="i playinput" placeholder="请输入邀约QQ或微信">
+					<div class="playtip">
+						<spen style="color: yellow;">签约主播</spen>可邀约1000名粉丝<br />抢先入驻，先行体验！<br />更有限时专享好礼等你领取
+					</div>
+					<a href="javascript:showSuccess()" class="i yuyuebtn btn-yuyue-big" title="立即预约"></a>
+					<div class="index_yy_number">已有<span id="shouyeNumber">301,827</span>位训练家成功预约</div>
+				</div>
+			</div>
+		</div>
+		<div class="showSuccess-Model pa">
+			<i onclick="hideSuccrss()">X</i>
+			<p>注：获得首发入驻名额后，需取得专用安装包进行装载，如有问题请联系渠道客服</p>
+		</div>
+	</div>
+</body>
+
+<script>
+	function showSuccess() {
+		$('.showSuccess-Model').show();
+	}
+	function hideSuccrss() {
+		$('.showSuccess-Model').hide();
+	}
+</script>
+
+</html>
